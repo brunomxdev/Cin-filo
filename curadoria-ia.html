@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curadoria de IA | Cinéfilo</title>
+    <link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="footer.css">
+</head>
+<body class="pagina-extra pagina-curadoria-ia">
+    <header class="topoMenu">
+        <h1><a href="index.html">Cinéfilo</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#catalogo">Filmes</a></li>
+                <li><a href="index.html#animes">Animes</a></li>
+                <li><a href="index.html#series">Séries</a></li>
+                <li><a href="lancamentos.html">Lançamentos</a></li>
+                <li><a href="desafios.html">Desafios</a></li>
+                <li><a href="curadoria-ia.html">Curadoria IA</a></li>
+                <li><a href="diario.html">Diário</a></li>
+                <li><a href="estatisticas.html">Estatísticas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+<section class="curadoria secao-menu secao-visivel">
+
+
+            <h1>Curadoria de IA</h1>
+
+
+            <p>
+                Converse com a curadoria e encontre obras
+                de acordo com o seu momento.
+            </p>
+
+
+            <!-- Área do chatbot -->
+
+
+            <div class="chatbot">
+
+
+                <div class="chatbot-mensagens" id="chatbot-mensagens">
+
+
+                    <div class="mensagem ia">
+                        <p>
+                            Olá! Como você está se sentindo hoje?
+                            Posso recomendar uma obra de acordo com o seu humor.
+                        </p>
+                    </div>
+
+
+                </div>
+
+
+                <!-- Opções de humor -->
+
+
+                <div class="opcoes-humor">
+
+
+                    <button class="humor" data-humor="feliz">
+                        Feliz
+                    </button>
+
+
+                    <button class="humor" data-humor="triste">
+                        Triste
+                    </button>
+
+
+                    <button class="humor" data-humor="ansioso">
+                        Ansioso
+                    </button>
+
+
+                    <button class="humor" data-humor="cansado">
+                        Cansado
+                    </button>
+
+
+                    <button class="humor" data-humor="animado">
+                        Animado
+                    </button>
+
+
+                </div>
+
+
+                <!-- Combinação de gostos -->
+
+
+                <div class="combinar-gostos">
+
+
+                    <h2>Combinar gostos com um amigo</h2>
+
+
+                    <p>
+                        Escolha um gênero que você gosta e um gênero
+                        que seu amigo gosta.
+                    </p>
+
+
+                    <label for="genero-usuario">
+                        Seu gênero:
+                    </label>
+
+
+                    <select id="genero-usuario">
+
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+
+                        <option value="Drama">
+                            Drama
+                        </option>
+
+
+                        <option value="Thriller">
+                            Thriller
+                        </option>
+
+
+                        <option value="Ficção Científica">
+                            Ficção Científica
+                        </option>
+
+
+                        <option value="Crime">
+                            Crime
+                        </option>
+
+
+                        <option value="Romance">
+                            Romance
+                        </option>
+
+
+                        <option value="Terror">
+                            Terror
+                        </option>
+
+
+                        <option value="Comédia">
+                            Comédia
+                        </option>
+
+
+                        <option value="Ação">
+                            Ação
+                        </option>
+
+
+                    </select>
+
+
+
+
+                    <label for="genero-amigo">
+                        Gênero do amigo:
+                    </label>
+
+
+                    <select id="genero-amigo">
+
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+
+                        <option value="Drama">
+                            Drama
+                        </option>
+
+
+                        <option value="Thriller">
+                            Thriller
+                        </option>
+
+
+                        <option value="Ficção Científica">
+                            Ficção Científica
+                        </option>
+
+
+                        <option value="Crime">
+                            Crime
+                        </option>
+
+
+                        <option value="Romance">
+                            Romance
+                        </option>
+
+
+                        <option value="Terror">
+                            Terror
+                        </option>
+
+
+                        <option value="Comédia">
+                            Comédia
+                        </option>
+
+
+                        <option value="Ação">
+                            Ação
+                        </option>
+
+
+                    </select>
+
+
+                    <button id="btn-combinar">
+                        Combinar gostos
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+    </main>
+    <script src="/js/ia.js"></script>
+    <script src="/js/footer.js" defer></script></script><script src="/js/tema.js"></script>
+</body>
+</html>

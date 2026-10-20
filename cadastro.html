@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>Cadastro | Cinéfilo</title>
+
+ <link rel="stylesheet" href="/css/index.css">
+
+<body>
+
+ <main>
+
+ <section class="cadastro">
+
+ <h1>Cinéfilo</h1>
+
+ <p>
+ Crie sua conta e comece sua jornada cinematográfica.
+ </p>
+
+ <form id="form-cadastro">
+
+ <!-- Nome -->
+
+ <div class="campo-cadastro">
+
+ <label for="nome">
+ Nome
+ </label>
+
+ <input
+ type="text"
+ id="nome"
+ placeholder="Digite seu nome"
+ required
+ >
+
+ </div>
+
+ <!-- E-mail -->
+
+ <div class="campo-cadastro">
+
+ <label for="email">
+ E-mail
+ </label>
+
+ <input
+ type="email"
+ id="email"
+ placeholder="Digite seu e-mail"
+ required
+ >
+
+ </div>
+
+ <!-- Senha -->
+
+ <div class="campo-cadastro">
+
+ <label for="senha">
+ Senha
+ </label>
+
+ <input
+ type="password"
+ id="senha"
+ placeholder="Digite sua senha"
+ required
+ >
+
+ </div>
+
+ <!-- Confirmação da senha -->
+
+ <div class="campo-cadastro">
+
+ <label for="confirmar-senha">
+ Confirmar senha
+ </label>
+
+ <input
+ type="password"
+ id="confirmar-senha"
+ placeholder="Digite sua senha novamente"
+ required
+ >
+
+ </div>
+
+ <!-- Botão -->
+
+ <button type="submit" id="btn-cadastrar">
+ Criar conta
+ </button>
+
+ <!-- Mensagem -->
+
+ <p id="mensagem-cadastro"></p>
+
+ </form>
+
+    <p><a href="index.html">Voltar ao catálogo</a></p>
+
+    <!-- Link para Login -->
+
+    <div class="login">
+    <p>Já possui uma conta?</p>
+
+     <a href="login.html"> Entrar</a>
+     </div>
+
+ </section>
+ </main>
+ <script src="/js/cadastro.js"></script></script><script src="/js/tema.js"></script>
+</body>
+</html>

@@ -1,0 +1,3442 @@
+/* CSS UNIFICADO
+   Base: pasted_content_2.txt
+   Complementos: pasted_content.txt
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+ --destaque: #111111;
+ --destaque-hover: #333333;
+ --superficie: #ffffff;
+ --superficie-2: #d9d9d9;
+ --texto: #1a1a1a;
+ --texto-suave: #666666;
+ --estrela: #b8b8b8;
+ --raio: 12px;
+ --sombra: 0 4px 16px rgba(0, 0, 0, 0.08);
+ }
+
+ * {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ }
+
+ html {
+ scroll-behavior: smooth;
+ }
+
+ body {
+ font-family: 'Inter', system-ui, sans-serif;
+ background: #f2f2f2;
+ color: var(--texto);
+ line-height: 1.5;
+ }
+
+ /* Header & Menu */
+.topoMenu {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 20px;
+ padding: 14px 40px;
+ background: #ffffff;
+ border-bottom: 2px solid var(--destaque);
+ box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ flex-wrap: wrap;
+ }
+
+.topoMenu h1 {
+ font-family: 'Playfair Display', serif;
+ font-style: italic;
+ font-weight: 700;
+ font-size: 2.2rem;
+ color: var(--destaque);
+ }
+
+.topoMenu nav ul {
+ display: flex;
+ gap: 6px;
+ list-style: none;
+ flex-wrap: wrap;
+ }
+
+.topoMenu nav a {
+ display: block;
+ padding: 8px 14px;
+ color: var(--texto);
+ text-decoration: none;
+ font-size: 0.95rem;
+ font-weight: 600;
+ border-radius: 6px;
+ transition: all 0.3s ease;
+ }
+
+.topoMenu nav a:hover {
+ background: var(--destaque);
+ color: #ffffff;
+ }
+
+ /* Banner Carrossel */
+.bannerIndex {
+ position: relative;
+ overflow: hidden;
+ background: #000;
+ }
+
+.trilha {
+ display: flex;
+ transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+ }
+
+.slide {
+ min-width: 100%;
+ height: 80vh;
+ min-height: 500px;
+ position: relative;
+ overflow: hidden;
+ }
+
+.slide::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: 
+ linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%),
+ var(--img, none) center / cover no-repeat;
+ }
+
+.slide.info {
+ position: absolute;
+ left: 50px;
+ bottom: 50px;
+ color: #fff;
+ text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+ z-index: 2;
+ }
+
+.slide.info small {
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ font-size: 0.85rem;
+ background: rgba(255, 255, 255, 0.2);
+ padding: 3px 8px;
+ border-radius: 4px;
+ }
+
+.slide.info h2 {
+ font-family: 'Playfair Display', serif;
+ font-size: 2.8rem;
+ margin-top: 6px;
+ }
+
+.button {
+ position: absolute;
+ right: 50px;
+ bottom: 50px;
+ z-index: 3;
+ padding: 12px 24px;
+ background: rgba(255, 255, 255, 0.2);
+ color: #fff;
+ border: 1px solid rgba(255, 255, 255, 0.5);
+ border-radius: 8px;
+ backdrop-filter: blur(8px);
+ font-size: 1rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }
+
+.button:hover {
+ background: #fff;
+ color: var(--texto);
+ }
+
+.seta {
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 3;
+ width: 48px;
+ height: 48px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: rgba(0, 0, 0, 0.4);
+ color: #fff;
+ border: 1px solid rgba(255, 255, 255, 0.3);
+ border-radius: 50%;
+ backdrop-filter: blur(6px);
+ font-size: 2rem;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }
+
+.seta:hover {
+ background: var(--destaque);
+ transform: translateY(-50%) scale(1.1);
+ }
+
+.esq { left: 16px; }
+.dir { right: 16px; }
+
+.bolinhas {
+ position: absolute;
+ bottom: 16px;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ gap: 8px;
+ z-index: 3;
+ }
+
+.bolinhas button {
+ width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ border: none;
+ background: rgba(255, 255, 255, 0.5);
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }
+
+.bolinhas button.ativa {
+ background: #fff;
+ transform: scale(1.3);
+ }
+
+ /* Container Principal */
+.container {
+ width: min(1280px, 94%);
+ margin: 0 auto;
+ padding: 40px 0 80px;
+ }
+
+.titulo-secao {
+ font-family: 'Playfair Display', serif;
+ font-size: 1.8rem;
+ margin-bottom: 20px;
+ padding-left: 14px;
+ border-left: 4px solid var(--destaque);
+ }
+
+.cabecalho-acao {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 16px;
+ margin-bottom: 20px;
+ }
+
+.btn-destaque {
+ background: var(--destaque);
+ color: #fff;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 8px;
+ font-weight: 600;
+ cursor: pointer;
+ transition: background 0.3s ease;
+ }
+
+.btn-destaque:hover {
+ background: var(--destaque-hover);
+ }
+
+ /* Filtros */
+.barra-filtros {
+ display: flex;
+ gap: 16px;
+ margin-bottom: 24px;
+ flex-wrap: wrap;
+ }
+
+.barra-filtros input,
+.barra-filtros select,
+ #input-ia {
+ background: var(--superficie);
+ color: var(--texto);
+ border: 1px solid var(--superficie-2);
+ border-radius: 8px;
+ padding: 12px 15px;
+ font-size: 0.95rem;
+ outline: none;
+ }
+
+.barra-filtros input { flex: 1; min-width: 240px; }
+
+ /* ROLAGEM HORIZONTAL (SLIDER DE CARDS) */
+.trilho-horizontal {
+ display: flex;
+ gap: 20px;
+ overflow-x: auto;
+ padding: 10px 4px 24px 4px;
+ scroll-behavior: smooth;
+ -webkit-overflow-scrolling: touch;
+ }
+
+ /* Estilização da Barra de Rolagem */
+.trilho-horizontal::-webkit-scrollbar {
+ height: 8px;
+ }
+.trilho-horizontal::-webkit-scrollbar-track {
+ background: var(--superficie-2);
+ border-radius: 10px;
+ }
+.trilho-horizontal::-webkit-scrollbar-thumb {
+ background: var(--destaque);
+ border-radius: 10px;
+ }
+
+.card {
+ min-width: 310px;
+ max-width: 310px;
+ flex: 0 0 auto;
+ background: var(--superficie);
+ border-radius: var(--raio);
+ overflow: hidden;
+ box-shadow: var(--sombra);
+ display: flex;
+ flex-direction: column;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+ cursor: pointer;
+ border: 1px solid rgba(0, 0, 0, 0.08);
+ }
+
+.card:hover {
+ transform: translateY(-8px);
+ box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+ }
+
+.poster {
+ position: relative;
+ aspect-ratio: 2 / 3;
+ background-color: #222222;
+ background-size: cover;
+ background-position: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+
+.poster.inicial {
+ font-family: 'Playfair Display', serif;
+ font-size: 3.5rem;
+ font-weight: 700;
+ color: var(--superficie-2);
+ }
+
+.nota {
+ position: absolute;
+ top: 10px;
+ right: 10px;
+ background: rgba(0, 0, 0, 0.75);
+ color: var(--estrela);
+ font-weight: 700;
+ font-size: 0.85rem;
+ padding: 4px 10px;
+ border-radius: 20px;
+ backdrop-filter: blur(4px);
+ }
+
+.card.info {
+ padding: 14px;
+ display: flex;
+ flex-direction: column;
+ gap: 6px;
+ flex: 1;
+ }
+
+.card.info h3 {
+ font-size: 1rem;
+ line-height: 1.3;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ }
+
+.meta {
+ font-size: 0.8rem;
+ color: var(--texto-suave);
+ }
+
+.tags {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 4px;
+ margin-top: auto;
+ padding-top: 8px;
+ }
+
+.tag {
+ font-size: 0.7rem;
+ background: var(--superficie-2);
+ color: var(--texto-suave);
+ padding: 2px 6px;
+ border-radius: 4px;
+ font-weight: 500;
+ }
+
+ /* Seções */
+ section {
+ margin-bottom: 50px;
+ }
+
+ /* Desafios */
+.grid-desafios {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: 20px;
+ }
+
+.card-desafio {
+ background: var(--superficie);
+ border-radius: var(--raio);
+ padding: 24px;
+ box-shadow: var(--sombra);
+ border: 1px solid var(--superficie-2);
+ }
+
+.card-desafio h3 {
+ margin-bottom: 8px;
+ color: var(--destaque);
+ }
+
+.progresso-bar {
+ height: 8px;
+ background: var(--superficie-2);
+ border-radius: 4px;
+ margin: 12px 0;
+ overflow: hidden;
+ }
+
+.progresso-fill {
+ height: 100%;
+ background: var(--destaque);
+ border-radius: 4px;
+ }
+
+ /* Curadoria IA */
+.box-ia {
+ background: var(--superficie);
+ border-radius: var(--raio);
+ padding: 28px;
+ box-shadow: var(--sombra);
+ border: 1px dashed var(--destaque);
+ }
+
+.resultado-ia {
+ margin-top: 20px;
+ padding: 20px;
+ background: #fff;
+ border-radius: 8px;
+ border-left: 4px solid var(--destaque);
+ }
+
+ /* Diário & Stats */
+.lista-diario {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: 20px;
+ }
+
+.item-diario {
+ background: var(--superficie);
+ border-radius: var(--raio);
+ padding: 20px;
+ box-shadow: var(--sombra);
+ border-left: 4px solid var(--destaque);
+ }
+
+.item-diario h3 {
+ font-size: 1.1rem;
+ margin-bottom: 4px;
+ }
+
+.item-diario.nota-pessoal {
+ color: var(--estrela);
+ font-weight: 700;
+ margin-right: 10px;
+ }
+
+.item-diario.data {
+ font-size: 0.85rem;
+ color: var(--texto-suave);
+ }
+
+.item-diario.comentario {
+ margin-top: 10px;
+ font-style: italic;
+ color: var(--texto);
+ }
+
+.painel-stats {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+ gap: 20px;
+ margin-bottom: 32px;
+ }
+
+.stat {
+ background: var(--superficie);
+ padding: 24px;
+ border-radius: var(--raio);
+ box-shadow: var(--sombra);
+ text-align: center;
+ }
+
+.stat strong {
+ display: block;
+ font-size: 2.2rem;
+ color: var(--destaque);
+ font-family: 'Playfair Display', serif;
+ }
+
+.stat span {
+ font-size: 0.9rem;
+ color: var(--texto-suave);
+ }
+
+.painel-generos {
+ background: var(--superficie);
+ padding: 24px;
+ border-radius: var(--raio);
+ box-shadow: var(--sombra);
+ }
+
+.barra-genero {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ margin-bottom: 14px;
+ }
+
+.barra-genero span:first-child {
+ width: 140px;
+ font-size: 0.9rem;
+ font-weight: 500;
+ }
+
+.trilho {
+ flex: 1;
+ height: 10px;
+ background: var(--superficie-2);
+ border-radius: 6px;
+ overflow: hidden;
+ }
+
+.preenchimento {
+ height: 100%;
+ background: var(--destaque);
+ border-radius: 6px;
+ }
+
+ /* Modais */
+.modal-overlay {
+ position: fixed;
+ inset: 0;
+ background: rgba(0, 0, 0, 0.6);
+ backdrop-filter: blur(4px);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 1000;
+ opacity: 0;
+ pointer-events: none;
+ transition: opacity 0.3s ease;
+ }
+
+.modal-overlay.ativo {
+ opacity: 1;
+ pointer-events: all;
+ }
+
+.modal {
+ background: var(--superficie);
+ padding: 32px;
+ border-radius: var(--raio);
+ width: min(520px, 92%);
+ max-height: 90vh;
+ overflow-y: auto;
+ position: relative;
+ box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+ }
+
+.fechar-modal {
+ position: absolute;
+ top: 16px;
+ right: 16px;
+ background: none;
+ border: none;
+ font-size: 1.8rem;
+ cursor: pointer;
+ color: var(--texto-suave);
+ }
+
+.form-grupo {
+ margin-bottom: 18px;
+ display: flex;
+ flex-direction: column;
+ gap: 6px;
+ }
+
+.form-grupo label {
+ font-size: 0.9rem;
+ font-weight: 600;
+ }
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+ padding: 10px 14px;
+ border: 1px solid var(--superficie-2);
+ border-radius: 6px;
+ font-family: inherit;
+ }
+
+.btn-submit {
+ width: 100%;
+ padding: 12px;
+ background: var(--destaque);
+ color: #fff;
+ border: none;
+ border-radius: 6px;
+ font-weight: 600;
+ font-size: 1rem;
+ cursor: pointer;
+ }
+ 
+
+/* Seções extras ficam ocultas até serem escolhidas no menu */
+.secao-menu { display: none; }
+.secao-menu.secao-visivel { display: block; }
+section[id] { scroll-margin-top: 110px; }
+
+/* Navegação por páginas separadas: oculta o conteúdo da página inicial nas páginas extras */
+body.pagina-extra.bannerIndex { display: none!important; }
+body.pagina-extra.container > section { display: none!important; }
+body.pagina-extra.container > section.secao-visivel { display: block!important; }
+body.pagina-extra.container { padding-top: 24px; }
+body.pagina-desafios #desafios.secao-visivel { display: block!important; }
+body.pagina-curadoria-ia #curadoria-ia.secao-visivel { display: block!important; }
+body.pagina-diario #diario.secao-visivel { display: block!important; }
+body.pagina-estatisticas #estatisticas.secao-visivel { display: block!important; }
+/* Estilos das páginas de cadastro, login e recursos separados */
+
+.topoMenu h1 a { color: inherit; text-decoration: none; }
+
+.pagina-extra main { width: min(100% - 32px, 1000px); margin: 32px auto; }
+
+/* ======================================================
+   CARTÕES (cadastro, login e demais páginas)
+   ====================================================== */
+.cadastro, .login, .diario, .estatisticas, .curadoria, .lancamentos, .desafios {
+  background: var(--superficie, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: var(--sombra, 0 4px 16px rgba(0, 0, 0, .08));
+  padding: clamp(20px, 4vw, 40px);
+  margin: 24px auto;
+}
+
+/* Cadastro e login: cartão central com destaque no topo */
+.cadastro, .login {
+  --erro: #b3261e;
+  --sucesso: #2e7d32;
+  width: min(100%, 520px);
+  border-top: 4px solid var(--destaque, #111111);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+  text-align: center;
+}
+
+.cadastro h1, .login h1, .diario h1, .estatisticas h1,
+.curadoria h1, .lancamentos h1, .desafios h1 {
+  color: var(--destaque, #111111);
+  margin-bottom: 12px;
+}
+
+/* Fonte da logo nos títulos de Cadastro e Entrar */
+.cadastro > h1,
+.login > h1 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+.login > p, .cadastro > p {
+  margin-bottom: 26px;
+  color: var(--texto-suave, #666666);
+  font-size: 0.95rem;
+}
+
+/* ======================================================
+   CAMPOS
+   ====================================================== */
+.campo-cadastro, .campo-login {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 16px 0;
+  text-align: left;
+}
+
+.campo-cadastro label, .campo-login label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--texto, #1a1a1a);
+}
+
+.campo-cadastro input, .campo-login input,
+.combinar-gostos select, .chatbot input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--superficie-2, #d9d9d9);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--texto, #1a1a1a);
+  font: inherit;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-cadastro input::placeholder,
+.campo-login input::placeholder,
+.chatbot input::placeholder {
+  color: #a89a90;
+}
+
+.campo-cadastro input:hover, .campo-login input:hover,
+.combinar-gostos select:hover, .chatbot input:hover {
+  border-color: var(--texto-suave, #666666);
+}
+
+.campo-cadastro input:focus, .campo-login input:focus,
+.combinar-gostos select:focus, .chatbot input:focus {
+  border-color: var(--destaque, #111111);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Só marca erro depois que a pessoa digitou algo */
+.campo-cadastro input:not(:placeholder-shown):invalid,
+.campo-login input:not(:placeholder-shown):invalid {
+  border-color: var(--erro, #b3261e);
+}
+
+/* ======================================================
+   BOTÕES
+   ====================================================== */
+.cadastro button, .login button, .combinar-gostos button, .lancamento button {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  cursor: pointer;
+  background: var(--destaque, #111111);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cadastro button:hover, .login button:hover,
+.combinar-gostos button:hover, .lancamento button:hover {
+  background: var(--destaque-hover, #333333);
+  transform: translateY(-2px);
+}
+
+.cadastro button:active, .login button:active { transform: translateY(0); }
+
+.cadastro button:disabled, .login button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Botão principal do formulário ocupa a largura toda */
+.cadastro form button[type="submit"],
+.login form button[type="submit"] {
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px;
+  font-size: 1rem;
+}
+
+/* ======================================================
+   MENSAGENS (somem quando vazias)
+   ====================================================== */
+#mensagem-cadastro, #mensagem-login {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--erro, #b3261e);
+  background: rgba(179, 38, 30, 0.08);
+}
+
+#mensagem-cadastro:empty, #mensagem-login:empty { display: none; }
+
+#mensagem-cadastro.erro, #mensagem-login.erro {
+  color: var(--erro, #b3261e);
+  background: rgba(179, 38, 30, 0.08);
+}
+
+#mensagem-cadastro.sucesso, #mensagem-login.sucesso {
+  color: var(--sucesso, #2e7d32);
+  background: rgba(46, 125, 50, 0.1);
+}
+
+/* ======================================================
+   LINKS E BLOCO "JÁ POSSUI CONTA / CRIAR CONTA"
+   ====================================================== */
+.cadastro a, .login a {
+  color: var(--destaque, #111111);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cadastro a:hover, .login a:hover {
+  color: var(--destaque-hover, #333333);
+  text-decoration: underline;
+}
+
+.cadastro > p:has(> a), .login > p:has(> a) {
+  margin: 22px 0 0;
+  font-size: 0.9rem;
+}
+
+/* Bloco interno (ex.: .login dentro de .cadastro, ou .cadastro dentro de .login)
+   não vira um segundo cartão */
+.cadastro .login, .login .cadastro,
+.login.cadastro, .cadastro.login {
+  width: auto;
+  margin: 22px 0 0;
+  padding: 20px 0 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--superficie-2, #d9d9d9);
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cadastro .login p, .login .cadastro p {
+  margin: 0;
+  color: var(--texto-suave, #666666);
+  font-size: 0.9rem;
+}
+
+.cadastro .login a, .login .cadastro a {
+  padding: 6px 14px;
+  border: 1px solid var(--destaque, #111111);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.cadastro .login a:hover, .login .cadastro a:hover {
+  background: var(--destaque, #111111);
+  color: #fff;
+  text-decoration: none;
+}
+
+.diario-vazio, .dados-insuficientes {
+  padding: 24px;
+  margin: 20px 0;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--superficie-2, #d9d9d9);
+}
+
+.critica, .estatistica, .lancamento, .desafio {
+  background: #fff;
+  border: 1px solid var(--superficie-2, #d9d9d9);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 14px 0;
+}
+
+.painel-estatisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.chatbot-mensagens {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.mensagem {
+  border-radius: 10px;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid var(--superficie-2, #d9d9d9);
+}
+
+.mensagem.usuario { background: var(--superficie-2, #d9d9d9); }
+
+.opcoes-humor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.opcoes-humor button {
+  background: #fff;
+  color: var(--texto, #1a1a1a);
+  border: 1px solid var(--superficie-2, #d9d9d9);
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.opcoes-humor button:hover {
+  background: var(--destaque, #111111);
+  border-color: var(--destaque, #111111);
+  color: #fff;
+}
+
+.combinar-gostos { display: grid; gap: 12px; margin-top: 24px; }
+
+.lista-lancamentos, .lista-criticas, .lista-desafios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* corrigido: precisa de espaço (descendente), não de ponto colado */
+.lista-lancamentos .lancamento,
+.lista-criticas .critica,
+.lista-desafios .desafio { margin: 0; }
+
+/* ======================================================
+   RODAPÉ SIMPLES
+   ====================================================== */
+footer {
+  text-align: center;
+  padding: 24px 16px;
+  color: var(--texto-suave, #666666);
+}
+
+@media (max-width: 480px) {
+  .cadastro > h1, .login > h1 { font-size: 2rem; }
+}
+
+
+/* Aumenta a largura do conteúdo */
+main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-sizing: border-box;
+}
+
+/* Libera os contêineres internos */
+main .container,
+main .conteudos,
+main .conteudo,
+main .secao,
+main .catalogo {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+/* Espaçamento entre as seções */
+main section {
+    margin-bottom: 40px;
+}
+
+/* Libera a largura da área principal */
+main {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+/* Remove limites dos contêineres internos */
+main .container,
+main .conteudos,
+main .conteudo,
+main .secao,
+main .catalogo {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+/* Aumenta o espaço entre as seções */
+main section {
+    margin-bottom: 40px;
+}
+
+/* Evita que o conteúdo ultrapasse a tela */
+main * {
+    box-sizing: border-box;
+}
+
+
+/* AUMENTA A LARGURA DO CATÁLOGO */
+
+.container {
+    width: 96%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* AMPLIA AS PÁGINAS EXTRAS, INCLUINDO LANÇAMENTOS */
+
+body.pagina-extra .container {
+    width: 96%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* USA MELHOR O ESPAÇO HORIZONTAL DOS CARDS */
+
+.trilho-horizontal {
+    width: 100%;
+    gap: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* MANTÉM A ROLAGEM HORIZONTAL DOS CARDS */
+
+#trilho-filmes,
+#trilho-series,
+#trilho-animes,
+#trilho-lancamentos {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE — CINÉFILO
+   ========================================= */
+
+/* Evita que elementos ultrapassem a tela */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablets e celulares */
+@media (max-width: 768px) {
+
+    /* Conteúdo principal */
+    .container,
+    body.pagina-extra .container {
+        width: 94%;
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    /* Cabeçalho e navegação */
+    .topoMenu {
+        padding: 14px 4%;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .topoMenu h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    .topoMenu nav {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .topoMenu nav ul {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 18px;
+        width: max-content;
+        min-width: 100%;
+        padding: 8px 0;
+    }
+
+    .topoMenu nav a {
+        white-space: nowrap;
+        font-size: 0.9rem;
+    }
+
+    /* Banner principal */
+    .bannerIndex {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .bannerIndex .button,
+    .btn-destaque {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    /* Títulos das seções */
+    .titulo-secao {
+        font-size: clamp(1.35rem, 4.5vw, 1.8rem);
+        line-height: 1.3;
+    }
+
+    .cabecalho-acao {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .cabecalho-acao > * {
+        max-width: 100%;
+    }
+
+    /* Busca e filtro */
+    .barra-filtros {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 50px;
+    }
+
+    .barra-filtros input,
+    .barra-filtros select {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    /* Trilhos de filmes, séries, animes e lançamentos */
+    .trilho-horizontal,
+    #trilho-filmes,
+    #trilho-series,
+    #trilho-animes,
+    #trilho-lancamentos {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        gap: 14px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 8px 2px 16px;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .trilho-horizontal .card,
+    #trilho-filmes .card,
+    #trilho-series .card,
+    #trilho-animes .card,
+    #trilho-lancamentos .card {
+        width: 210px;
+        min-width: 210px;
+        max-width: 210px;
+        flex: 0 0 210px;
+        scroll-snap-align: start;
+    }
+
+    /* Textos dos cards */
+    .card h3 {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    .card .info {
+        padding: 12px;
+    }
+
+    .tags {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    /* Detalhes de filmes e outras obras */
+    #conteudo-detalhes .detalhes-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    #conteudo-detalhes .imagem-detalhes-wrap {
+        width: min(100%, 260px);
+        min-width: 0;
+        margin: 0 auto;
+    }
+
+    #conteudo-detalhes .img-detalhes {
+        max-width: 100%;
+        max-height: 45vh;
+        object-fit: contain;
+    }
+
+    #conteudo-detalhes .detalhes-texto {
+        min-width: 0;
+        padding-top: 0;
+        overflow-wrap: anywhere;
+    }
+
+    /* Páginas extras */
+    body.pagina-extra .container {
+        padding: 16px 0;
+    }
+
+    body.pagina-extra .box-ia {
+        padding: 16px;
+    }
+
+    body.pagina-extra .painel-generos,
+    body.pagina-extra .stat,
+    body.pagina-extra .item-diario,
+    body.pagina-extra .card-desafio {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* Grades: desafios, estatísticas e painéis */
+    .lista-desafios {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(min(100%, 220px), 1fr)
+        );
+        gap: 14px;
+    }
+
+    /* Campos, botões e formulários */
+    input,
+    select,
+    textarea,
+    button {
+        max-width: 100%;
+    }
+
+    button {
+        min-height: 42px;
+    }
+
+    /* Modais */
+    .modal,
+    .modal-conteudo {
+        width: min(94%, 560px);
+        max-width: 94vw;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* Celulares estreitos */
+@media (max-width: 480px) {
+
+    .container,
+    body.pagina-extra .container {
+        width: 92%;
+        margin: 16px auto;
+    }
+
+    .topoMenu {
+        padding: 12px 4%;
+    }
+
+    .topoMenu nav ul {
+        gap: 14px;
+    }
+
+    .topoMenu nav a {
+        font-size: 0.84rem;
+    }
+
+    .titulo-secao {
+        font-size: 1.3rem;
+    }
+
+    .trilho-horizontal,
+    #trilho-filmes,
+    #trilho-series,
+    #trilho-animes,
+    #trilho-lancamentos {
+        gap: 12px;
+    }
+
+    .trilho-horizontal .card,
+    #trilho-filmes .card,
+    #trilho-series .card,
+    #trilho-animes .card,
+    #trilho-lancamentos .card {
+        width: 175px;
+        min-width: 175px;
+        max-width: 175px;
+        flex-basis: 175px;
+    }
+
+    .card .info {
+        padding: 10px;
+    }
+
+    .card h3 {
+        font-size: 0.88rem;
+    }
+
+    .cabecalho-acao {
+        gap: 10px;
+    }
+
+    .btn-destaque,
+    .bannerIndex .button {
+        width: 100%;
+        padding: 11px 14px;
+        font-size: 0.9rem;
+    }
+
+    .lista-desafios {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.pagina-extra .box-ia {
+        padding: 14px;
+    }
+
+    section[id] {
+        scroll-margin-top: 90px;
+    }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+
+    .trilho-horizontal .card,
+    #trilho-filmes .card,
+    #trilho-series .card,
+    #trilho-animes .card,
+    #trilho-lancamentos .card {
+        width: 155px;
+        min-width: 155px;
+        max-width: 155px;
+        flex-basis: 155px;
+    }
+
+    .titulo-secao {
+        font-size: 1.2rem;
+    }
+
+    .topoMenu nav a {
+        font-size: 0.8rem;
+    }
+}
+
+/* ==========================================================
+   COMPLEMENTOS DO PRIMEIRO CSS
+   ========================================================== */
+
+/* Cartões maiores e detalhes da obra */
+.trilho-horizontal {
+    gap: 24px;
+    padding: 14px 8px 28px;
+}
+
+.card .info {
+    padding: 17px;
+    gap: 8px;
+}
+
+.poster {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    background-size: cover;
+    background-position: center top;
+}
+
+#modal-detalhes .modal {
+    width: min(900px, 94vw);
+    max-height: 90vh;
+    padding: clamp(20px, 3vw, 34px);
+}
+
+#conteudo-detalhes .detalhes-layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 310px) minmax(0, 1fr);
+    gap: clamp(22px, 3vw, 36px);
+    align-items: start;
+}
+
+#conteudo-detalhes .imagem-detalhes-wrap {
+    width: 100%;
+    min-height: 300px;
+    aspect-ratio: 2 / 3;
+    background: #222222;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#conteudo-detalhes .img-detalhes {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    object-position: center;
+    background: #222222;
+}
+
+#conteudo-detalhes .imagem-detalhes-fallback {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    padding: 24px;
+    color: #ffffff;
+    font: italic 700 clamp(1.5rem, 3vw, 2.4rem) 'Playfair Display', Georgia, serif;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: anywhere;
+}
+
+#conteudo-detalhes .detalhes-texto {
+    min-width: 0;
+    padding: 8px 0;
+}
+
+#conteudo-detalhes .titulo-detalhes {
+    font: 700 clamp(1.6rem, 3vw, 2.3rem)/1.2 'Playfair Display', Georgia, serif;
+    color: var(--destaque);
+    margin: 0 34px 14px 0;
+    overflow-wrap: anywhere;
+}
+
+#conteudo-detalhes .meta-detalhes {
+    color: var(--texto-suave);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+#conteudo-detalhes .sinopse-detalhes {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 18px 0;
+}
+
+#conteudo-detalhes .nota-detalhes {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--superficie-2);
+    color: var(--texto);
+    font-weight: 700;
+}
+
+@media (max-width: 700px) {
+    .card {
+        width: 235px;
+        min-width: 235px;
+        max-width: 235px;
+        flex-basis: 235px;
+    }
+
+    #conteudo-detalhes .detalhes-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    #conteudo-detalhes .imagem-detalhes-wrap {
+        width: min(100%, 280px);
+        min-height: 0;
+        margin: 0 auto;
+    }
+
+    #conteudo-detalhes .img-detalhes {
+        max-height: 48vh;
+    }
+
+    #conteudo-detalhes .detalhes-texto {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .card {
+        width: 215px;
+        min-width: 215px;
+        max-width: 215px;
+        flex-basis: 215px;
+    }
+}
+
+/* AVALIAR A OBRA A PARTIR DO MODAL DE DETALHES */
+.btn-avaliar-obra {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--destaque);
+    color: #fff;
+    font: 600 0.95rem 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.btn-avaliar-obra:hover {
+    background: var(--destaque-hover);
+    transform: translateY(-2px);
+}
+
+.minha-avaliacao-detalhes {
+    margin-top: 12px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+.minha-avaliacao-detalhes strong {
+    color: var(--destaque);
+}
+
+/* CORREÇÃO: estilos das páginas acessadas pelo menu */
+.topoMenu h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.secao-menu {
+    display: none;
+}
+
+.secao-menu.secao-visivel {
+    display: block;
+}
+
+section[id] {
+    scroll-margin-top: 110px;
+}
+
+/* Mantém somente o conteúdo da página correspondente visível */
+body.pagina-extra .bannerIndex {
+    display: none !important;
+}
+
+body.pagina-extra .container > section {
+    display: none !important;
+}
+
+body.pagina-extra .container > section.secao-visivel {
+    display: block !important;
+}
+
+body.pagina-extra .container {
+    width: min(100% - 32px, 1000px);
+    margin: 32px auto;
+    padding-top: 24px;
+}
+
+body.pagina-extra #lancamentos.secao-visivel,
+body.pagina-extra #desafios.secao-visivel,
+body.pagina-extra #curadoria-ia.secao-visivel,
+body.pagina-extra #diario.secao-visivel,
+body.pagina-extra #estatisticas.secao-visivel {
+    display: block !important;
+}
+
+/* Ajustes responsivos das páginas extras */
+@media (max-width: 700px) {
+    body.pagina-extra .container {
+        width: 92%;
+        margin: 24px auto;
+        padding-top: 16px;
+    }
+
+    body.pagina-extra .box-ia {
+        padding: 20px;
+    }
+
+    body.pagina-extra .painel-generos,
+    body.pagina-extra .stat,
+    body.pagina-extra .item-diario,
+    body.pagina-extra .card-desafio {
+        min-width: 0;
+    }
+}
+
+/* Página de Desafios — estilos das classes usadas em desafios.html */
+body.pagina-desafios .desafios {
+    width: 100%;
+    margin: 0 auto 48px;
+}
+
+body.pagina-desafios .desafios > h1 {
+    margin: 0 0 10px;
+    color: var(--destaque);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+body.pagina-desafios .descricao-desafios {
+    margin: 0 0 24px;
+    color: var(--texto-suave);
+    line-height: 1.7;
+}
+
+.progresso-desafios {
+    padding: 18px 22px;
+    margin: 0 0 24px;
+    background: var(--superficie);
+    border: 1px solid var(--superficie-2);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.progresso-desafios h2 {
+    margin: 0;
+    color: var(--texto);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.lista-desafios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 18px;
+}
+
+.lista-desafios .desafio {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 170px;
+    margin: 0;
+    padding: 22px;
+    background: var(--superficie);
+    border: 1px solid var(--superficie-2);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.lista-desafios .desafio:hover {
+    transform: translateY(-3px);
+    border-color: var(--destaque);
+}
+
+.lista-desafios .desafio h2 {
+    margin: 0 0 10px;
+    color: var(--destaque);
+    font-size: 1.15rem;
+}
+
+.lista-desafios .desafio > p:not(.status-desafio) {
+    margin: 0 0 20px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+.lista-desafios .status-desafio {
+    margin: auto 0 0;
+    padding-top: 12px;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.lista-desafios .status-concluido {
+    color: #555555;
+}
+
+.lista-desafios .status-pendente {
+    color: var(--texto-suave);
+}
+
+@media (max-width: 600px) {
+    .progresso-desafios {
+        padding: 16px;
+    }
+
+    .lista-desafios .desafio {
+        padding: 18px;
+    }
+}
+
+
+/* Página Curadoria IA — estilos das classes utilizadas em curadoria-ia.html */
+body.pagina-curadoria-ia .curadoria {
+    width: 100%;
+    margin: 0 auto 48px;
+}
+
+body.pagina-curadoria-ia .curadoria > h1 {
+    margin: 0 0 10px;
+    color: var(--destaque);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+body.pagina-curadoria-ia .curadoria > p {
+    margin-bottom: 24px;
+    color: var(--texto-suave);
+}
+
+body.pagina-curadoria-ia .chatbot {
+    display: grid;
+    gap: 22px;
+    padding: 24px;
+    background: var(--superficie);
+    border: 1px solid var(--superficie-2);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+body.pagina-curadoria-ia .chatbot-mensagens {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 430px;
+    overflow-y: auto;
+    padding: 4px;
+}
+
+body.pagina-curadoria-ia .mensagem {
+    max-width: 90%;
+    padding: 13px 16px;
+    color: var(--texto);
+    background: #fff;
+    border: 1px solid var(--superficie-2);
+    border-radius: 12px 12px 12px 3px;
+    overflow-wrap: anywhere;
+}
+
+body.pagina-curadoria-ia .mensagem p { margin: 0; }
+
+body.pagina-curadoria-ia .mensagem.usuario {
+    align-self: flex-end;
+    background: var(--superficie-2);
+    border-radius: 12px 12px 3px 12px;
+}
+
+body.pagina-curadoria-ia .mensagem.ia { align-self: flex-start; }
+
+body.pagina-curadoria-ia .opcoes-humor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+body.pagina-curadoria-ia .humor,
+body.pagina-curadoria-ia #btn-combinar {
+    padding: 10px 16px;
+    color: #fff;
+    background: var(--destaque);
+    border: 1px solid var(--destaque);
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+}
+
+body.pagina-curadoria-ia .humor:hover,
+body.pagina-curadoria-ia #btn-combinar:hover {
+    background: var(--destaque-hover);
+    transform: translateY(-1px);
+}
+
+body.pagina-curadoria-ia .combinar-gostos {
+    display: grid;
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid var(--superficie-2);
+}
+
+body.pagina-curadoria-ia .combinar-gostos h2 {
+    color: var(--destaque);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.45rem;
+}
+
+body.pagina-curadoria-ia .combinar-gostos p { color: var(--texto-suave); }
+
+body.pagina-curadoria-ia .combinar-gostos label {
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+body.pagina-curadoria-ia .combinar-gostos select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--texto);
+    background: #fff;
+    border: 1px solid var(--superficie-2);
+    border-radius: 8px;
+    font: inherit;
+}
+
+body.pagina-curadoria-ia .combinar-gostos select:focus-visible,
+body.pagina-curadoria-ia .humor:focus-visible,
+body.pagina-curadoria-ia #btn-combinar:focus-visible {
+    outline: 3px solid rgba(0, 0, 0, .25);
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+    body.pagina-curadoria-ia .chatbot { padding: 16px; }
+    body.pagina-curadoria-ia .mensagem { max-width: 100%; }
+    body.pagina-curadoria-ia .opcoes-humor { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    body.pagina-curadoria-ia .humor { padding: 10px 8px; }
+}
+
+
+/* AUMENTA A LARGURA DO CATÁLOGO */
+
+.container {
+    width: 96%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* AMPLIA AS PÁGINAS EXTRAS, INCLUINDO LANÇAMENTOS */
+
+body.pagina-extra .container {
+    width: 96%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* USA MELHOR O ESPAÇO HORIZONTAL DOS CARDS */
+
+.trilho-horizontal {
+    width: 100%;
+    gap: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* MANTÉM A ROLAGEM HORIZONTAL DOS CARDS */
+
+#trilho-filmes,
+#trilho-series,
+#trilho-animes,
+#trilho-lancamentos {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE — CINÉFILO
+   ========================================= */
+
+/* Evita que elementos ultrapassem a tela */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablets e celulares */
+@media (max-width: 768px) {
+
+    /* Conteúdo principal */
+    .container,
+    body.pagina-extra .container {
+        width: 94%;
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    /* Cabeçalho e navegação */
+    .topoMenu {
+        padding: 14px 4%;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .topoMenu h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    .topoMenu nav {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .topoMenu nav ul {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 18px;
+        width: max-content;
+        min-width: 100%;
+        padding: 8px 0;
+    }
+
+    .topoMenu nav a {
+        white-space: nowrap;
+        font-size: 0.9rem;
+    }
+
+    /* Banner principal */
+    .bannerIndex {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .bannerIndex .button,
+    .btn-destaque {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    /* Títulos das seções */
+    .titulo-secao {
+        font-size: clamp(1.35rem, 4.5vw, 1.8rem);
+        line-height: 1.3;
+    }
+
+    .cabecalho-acao {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .cabecalho-acao > * {
+        max-width: 100%;
+    }
+
+        /* Busca e filtro */
+    .barra-filtros {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .barra-filtros input,
+    .barra-filtros select {
+        flex: none;
+        width: 100%;
+        height: 44px;
+        min-width: 0;
+        font-size: 16px;
+    }
+    /* Trilhos de filmes, séries, animes e lançamentos */
+    .trilho-horizontal,
+    #trilho-filmes,
+    #trilho-series,
+    #trilho-animes,
+    #trilho-lancamentos {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        gap: 14px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 8px 2px 16px;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .trilho-horizontal .card,
+    #trilho-filmes .card,
+    #trilho-series .card,
+    #trilho-animes .card,
+    #trilho-lancamentos .card {
+        width: 210px;
+        min-width: 210px;
+        max-width: 210px;
+        flex: 0 0 210px;
+        scroll-snap-align: start;
+    }
+
+    /* Textos dos cards */
+    .card h3 {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    .card .info {
+        padding: 12px;
+    }
+
+    .tags {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    /* Detalhes de filmes e outras obras */
+    #conteudo-detalhes .detalhes-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    #conteudo-detalhes .imagem-detalhes-wrap {
+        width: min(100%, 260px);
+        min-width: 0;
+        margin: 0 auto;
+    }
+
+    #conteudo-detalhes .img-detalhes {
+        max-width: 100%;
+        max-height: 45vh;
+        object-fit: contain;
+    }
+
+    #conteudo-detalhes .detalhes-texto {
+        min-width: 0;
+        padding-top: 0;
+        overflow-wrap: anywhere;
+    }
+
+    /* Páginas extras */
+    body.pagina-extra .container {
+        padding: 16px 0;
+    }
+
+    body.pagina-extra .box-ia {
+        padding: 16px;
+    }
+
+    body.pagina-extra .painel-generos,
+    body.pagina-extra .stat,
+    body.pagina-extra .item-diario,
+    body.pagina-extra .card-desafio {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* Grades: desafios, estatísticas e painéis */
+    .lista-desafios {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(min(100%, 220px), 1fr)
+        );
+        gap: 14px;
+    }
+
+    /* Campos, botões e formulários */
+    input,
+    select,
+    textarea,
+    button {
+        max-width: 100%;
+    }
+
+    button {
+        min-height: 42px;
+    }
+
+    /* Modais */
+    .modal,
+    .modal-conteudo {
+        width: min(94%, 560px);
+        max-width: 94vw;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* Celulares estreitos */
+@media (max-width: 480px) {
+
+    .container,
+    body.pagina-extra .container {
+        width: 92%;
+        margin: 16px auto;
+    }
+
+    .topoMenu {
+        padding: 12px 4%;
+    }
+
+    .topoMenu nav ul {
+        gap: 14px;
+    }
+
+    .topoMenu nav a {
+        font-size: 0.84rem;
+    }
+
+    .titulo-secao {
+        font-size: 1.3rem;
+    }
+
+    .trilho-horizontal,
+    #trilho-filmes,
+    #trilho-series,
+    #trilho-animes,
+    #trilho-lancamentos {
+        gap: 12px;
+    }
+
+    .trilho-horizontal .card,
+    #trilho-filmes .card,
+    #trilho-series .card,
+    #trilho-animes .card,
+    #trilho-lancamentos .card {
+        width: 175px;
+        min-width: 175px;
+        max-width: 175px;
+        flex-basis: 175px;
+    }
+
+    .card .info {
+        padding: 10px;
+    }
+
+    .card h3 {
+        font-size: 0.88rem;
+    }
+
+    .cabecalho-acao {
+        gap: 10px;
+    }
+
+    .btn-destaque,
+    .bannerIndex .button {
+        width: 100%;
+        padding: 11px 14px;
+        font-size: 0.9rem;
+    }
+
+    .lista-desafios {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.pagina-extra .box-ia {
+        padding: 14px;
+    }
+
+    section[id] {
+        scroll-margin-top: 90px;
+    }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+
+    .trilho-horizontal .card,
+    #trilho-filmes .card,
+    #trilho-series .card,
+    #trilho-animes .card,
+    #trilho-lancamentos .card {
+        width: 155px;
+        min-width: 155px;
+        max-width: 155px;
+        flex-basis: 155px;
+    }
+
+    .titulo-secao {
+        font-size: 1.2rem;
+    }
+
+    .topoMenu nav a {
+        font-size: 0.8rem;
+    }
+}
+
+.barra-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.barra-filtros input {
+    flex: 0 1 380px;
+    max-width: 380px;
+    min-width: 200px;
+}
+
+.barra-filtros select {
+    flex: 0 0 auto;
+    width: 220px;
+}
+
+/* ==========================================================
+   COMPATIBILIDADE E CORREÇÕES DA UNIÃO DOS DOIS ARQUIVOS
+   ========================================================== */
+
+/* Seletores descendentes corrigidos (as versões coladas com ponto não
+   selecionavam os elementos internos do componente). */
+.slide .info {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.slide .info small {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.slide .info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-top: 6px;
+}
+
+.poster .inicial {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--superficie-2);
+}
+
+.card .info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.card .info h3 {
+  font-size: 1rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.item-diario .nota-pessoal {
+  color: var(--estrela);
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.item-diario .data {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.item-diario .comentario {
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--texto);
+}
+
+/* Descendência correta para páginas extras. */
+body.pagina-extra .bannerIndex {
+  display: none !important;
+}
+
+body.pagina-extra .container > section {
+  display: none !important;
+}
+
+body.pagina-extra .container > section.secao-visivel {
+  display: block !important;
+}
+
+
+/* ==========================================================
+   RODAPÉ CINEFÍLO
+   ========================================================== */
+
+.footerCinefilo {
+  background: var(--superficie, #ffffff);
+  color: var(--texto-suave, #666666);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  margin-top: 60px;
+  padding: 50px 6% 0;
+  border-top: 2px solid var(--destaque, #111111);
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.footerConteudo {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-bottom: 36px;
+}
+
+/* Logo igual ao do menu: Playfair Display itálico */
+.footerLogo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--destaque, #111111);
+  text-decoration: none;
+}
+
+.footerMarca p {
+  margin-top: 12px;
+  max-width: 340px;
+}
+
+/* Títulos das colunas como os títulos de seção do site */
+.footerColuna h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--texto, #1a1a1a);
+  margin-bottom: 14px;
+  padding-left: 10px;
+  border-left: 4px solid var(--destaque, #111111);
+}
+
+.footerColuna ul {
+  list-style: none;
+}
+
+.footerColuna li {
+  margin-bottom: 4px;
+}
+
+/* Links com o mesmo efeito dos links do menu */
+.footerColuna a,
+.footerTopo {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-left: -12px;
+  color: var(--texto, #1a1a1a);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.footerColuna a:hover,
+.footerTopo:hover {
+  background: var(--destaque, #111111);
+  color: #ffffff;
+}
+
+.footerLogo:hover {
+  color: var(--destaque-hover, #333333);
+}
+
+.footerCinefilo a:focus-visible {
+  outline: 2px solid var(--destaque, #111111);
+  outline-offset: 3px;
+}
+
+.footerBase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 0;
+  border-top: 1px solid var(--superficie-2, #d9d9d9);
+  font-size: 0.875rem;
+  color: var(--texto-suave, #666666);
+}
+
+.footerBase .footerTopo {
+  margin-left: 0;
+}
+
+@media (max-width: 700px) {
+  .footerConteudo {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footerBase {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* ==========================================================
+   MELHORIAS DE LAYOUT — CINÉFILO
+   Mantém as classes existentes e aprimora espaçamento,
+   hierarquia visual, responsividade e acessibilidade.
+   ========================================================== */
+
+:root {
+  --largura-conteudo: 1440px;
+  --espaco-secao: clamp(42px, 6vw, 84px);
+  --sombra-elevada: 0 18px 45px rgba(0, 0, 0, 0.14);
+}
+
+html { scroll-padding-top: 90px; }
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.8), transparent 32rem),
+    #f4ede5;
+  color: var(--texto);
+}
+
+main {
+  width: 100%;
+  max-width: var(--largura-conteudo);
+  margin: 0 auto;
+}
+
+main > .container,
+.container {
+  width: min(92%, var(--largura-conteudo));
+  max-width: var(--largura-conteudo);
+  margin-inline: auto;
+  padding-block: clamp(32px, 5vw, 64px) clamp(56px, 8vw, 96px);
+}
+
+.topoMenu {
+  gap: 14px 28px;
+  padding: 14px max(4%, calc((100vw - var(--largura-conteudo)) / 2));
+  background: rgba(253, 250, 243, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.topoMenu h1 { line-height: 1; letter-spacing: -0.025em; }
+.topoMenu nav { margin-left: auto; }
+.topoMenu nav ul { align-items: center; gap: 4px; }
+.topoMenu nav a {
+  padding: 9px 13px;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+.topoMenu nav a:hover { transform: translateY(-1px); }
+
+.bannerIndex { isolation: isolate; box-shadow: var(--sombra-elevada); }
+
+.slide {
+  min-height: clamp(460px, 68vh, 720px);
+  height: clamp(460px, 72vh, 760px);
+}
+
+.slide::after {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .28) 55%, rgba(0, 0, 0, .12) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, .8) 0%, transparent 55%),
+    var(--img, none) center / cover no-repeat;
+}
+
+.slide .info {
+  left: clamp(24px, 7vw, 110px);
+  bottom: clamp(34px, 7vw, 90px);
+  width: min(620px, calc(100% - 48px));
+}
+
+.slide .info h2 {
+  margin-top: 12px;
+  font-size: clamp(2rem, 5vw, 4.4rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.slide .info small { display: inline-block; letter-spacing: .14em; }
+
+.bannerIndex .button,
+.slide .button {
+  right: clamp(24px, 7vw, 110px);
+  bottom: clamp(34px, 7vw, 90px);
+  padding: 13px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+}
+
+section { margin-bottom: var(--espaco-secao); }
+
+.titulo-secao {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  margin-bottom: 24px;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1.15;
+}
+
+.cabecalho-acao { margin-bottom: 24px; }
+
+.barra-filtros {
+  align-items: stretch;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 28px;
+  background: rgba(253, 250, 243, .72);
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: var(--raio);
+}
+
+.barra-filtros input,
+.barra-filtros select,
+#input-ia {
+  min-height: 46px;
+  background: #fff;
+  border-color: rgba(0, 0, 0, .2);
+}
+
+.barra-filtros input:focus,
+.barra-filtros select:focus,
+#input-ia:focus,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, .22);
+  outline-offset: 2px;
+}
+
+.trilho-horizontal {
+  gap: clamp(16px, 2vw, 26px);
+  padding: 12px 6px 28px;
+  scroll-padding-inline: 6px;
+}
+
+.card {
+  min-width: clamp(238px, 23vw, 310px);
+  max-width: clamp(238px, 23vw, 310px);
+  flex-basis: clamp(238px, 23vw, 310px);
+  border-color: rgba(0, 0, 0, .14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .18);
+}
+
+.card .info { min-height: 148px; padding: 16px; }
+.card .info h3,
+.card h3 { line-height: 1.3; white-space: normal; overflow-wrap: anywhere; }
+.poster { aspect-ratio: 2 / 3; background-position: center top; }
+
+.card-desafio,
+.box-ia,
+.item-diario,
+.stat,
+.painel-generos,
+.chatbot,
+.progresso-desafios,
+.cadastro,
+.login,
+.diario,
+.estatisticas,
+.curadoria,
+.lancamentos,
+.desafios {
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .08);
+}
+
+.card-desafio,
+.item-diario,
+.stat { padding: clamp(18px, 2.5vw, 28px); }
+
+#modal-detalhes .modal {
+  width: min(980px, 94vw);
+  border: 1px solid rgba(0, 0, 0, .12);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+}
+
+#conteudo-detalhes .detalhes-layout { gap: clamp(24px, 5vw, 56px); }
+
+.footerCinefilo {
+  margin-top: clamp(28px, 6vw, 72px);
+  padding-top: clamp(36px, 5vw, 58px);
+}
+
+.footerConteudo,
+.footerBase { width: min(92%, var(--largura-conteudo)); }
+.footerConteudo { gap: clamp(24px, 5vw, 72px); }
+
+@media (max-width: 900px) {
+  .topoMenu { padding-inline: 4%; }
+  .topoMenu nav { width: 100%; margin-left: 0; }
+  .topoMenu nav ul { justify-content: flex-start; }
+  .footerConteudo { grid-template-columns: 1.5fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  main > .container,
+  .container { width: min(92%, 620px); padding-block: 28px 60px; }
+  .slide { min-height: 520px; height: 70vh; }
+  .slide .info { left: 24px; bottom: 112px; }
+  .slide .info h2 { font-size: clamp(1.9rem, 9vw, 3.2rem); }
+  .bannerIndex .button,
+  .slide .button { left: 24px; right: auto; bottom: 38px; }
+  .barra-filtros { padding: 12px; }
+  .barra-filtros input,
+  .barra-filtros select,
+  #input-ia { width: 100%; min-width: 0; }
+  .card { min-width: 224px; max-width: 224px; flex-basis: 224px; }
+  .card .info { min-height: 132px; padding: 13px; }
+}
+
+@media (max-width: 420px) {
+  .topoMenu h1 { font-size: 1.8rem; }
+  .topoMenu nav ul { gap: 0; }
+  .topoMenu nav a { padding-inline: 9px; font-size: .82rem; }
+  .card { min-width: 190px; max-width: 190px; flex-basis: 190px; }
+  .slide .info { left: 18px; width: calc(100% - 36px); }
+  .bannerIndex .button,
+  .slide .button { left: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+
+/* ==========================================================
+   AJUSTES FINAIS DE PROPORÇÃO E ALINHAMENTO
+   ========================================================== */
+
+/* Menu mais compacto, sem espaços excessivos entre os links */
+.topoMenu {
+  gap: 10px 18px;
+}
+
+.topoMenu nav ul {
+  gap: 2px;
+}
+
+.topoMenu nav a {
+  padding: 7px 10px;
+  font-size: .9rem;
+}
+
+/* O conteúdo ocupa melhor a tela; somente os cards ficam menores */
+main {
+  max-width: none;
+}
+
+main > .container,
+.container {
+  width: 96%;
+  max-width: 1800px;
+}
+
+.trilho-horizontal {
+  width: 100%;
+}
+
+.card {
+  min-width: 270px;
+  max-width: 270px;
+  flex-basis: 270px;
+}
+
+/* Rodapé: texto reto, alinhado e sem recuo negativo nos links */
+.footerCinefilo {
+  overflow: hidden;
+}
+
+.footerConteudo {
+  align-items: start;
+}
+
+.footerMarca,
+.footerColuna {
+  min-width: 0;
+  text-align: left;
+}
+
+.footerMarca p {
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.footerColuna h3 {
+  line-height: 1.2;
+}
+
+.footerColuna ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footerColuna li {
+  line-height: 1.4;
+}
+
+.footerColuna a,
+.footerTopo {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: 0;
+  padding: 4px 0;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-align: left;
+}
+
+.footerColuna a:hover,
+.footerTopo:hover {
+  padding-inline: 8px;
+  margin-left: -8px;
+}
+
+.footerBase {
+  line-height: 1.45;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+@media (max-width: 900px) {
+  .card {
+    min-width: 245px;
+    max-width: 245px;
+    flex-basis: 245px;
+  }
+}
+
+@media (max-width: 700px) {
+  .topoMenu nav a {
+    padding-inline: 8px;
+  }
+
+  .card {
+    min-width: 215px;
+    max-width: 215px;
+    flex-basis: 215px;
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    min-width: 190px;
+    max-width: 190px;
+    flex-basis: 190px;
+  }
+}
+
+
+/* ==========================================================
+   AJUSTE DO BANNER E POSIÇÃO DA LOGO
+   ========================================================== */
+
+/* Logo mais próxima do início da tela */
+.topoMenu {
+  padding-left: clamp(16px, 3vw, 40px);
+  padding-right: clamp(16px, 3vw, 40px);
+}
+
+/* Banner volta a ter presença sem deixar o título exagerado */
+.slide {
+  height: 80vh;
+  min-height: 500px;
+}
+
+.slide .info h2 {
+  font-size: clamp(1.7rem, 3.6vw, 3.2rem);
+  line-height: 1.1;
+}
+
+@media (max-width: 700px) {
+  .slide {
+    height: 72vh;
+    min-height: 480px;
+  }
+
+  .slide .info h2 {
+    font-size: clamp(1.65rem, 8vw, 2.6rem);
+  }
+}
+
+
+/* ==========================================================
+   PALETA MONOCROMÁTICA — PRETO, CINZA E BRANCO
+   ========================================================== */
+:root {
+  --destaque: #111111;
+  --destaque-hover: #333333;
+  --superficie: #ffffff;
+  --superficie-2: #d9d9d9;
+  --texto: #1a1a1a;
+  --texto-suave: #666666;
+  --estrela: #777777;
+  --sombra: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+body {
+  background: #f2f2f2;
+  color: var(--texto);
+}
+
+.topoMenu {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom-color: #111111;
+}
+
+.bannerIndex {
+  background: #111111;
+}
+
+.slide::after {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .82) 0%, rgba(0, 0, 0, .3) 55%, rgba(0, 0, 0, .12) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, .82) 0%, transparent 55%),
+    var(--img, none) center / cover no-repeat;
+}
+
+.poster,
+#conteudo-detalhes .imagem-detalhes-wrap,
+#conteudo-detalhes .img-detalhes {
+  background-color: #222222;
+  background: #222222;
+}
+
+.card,
+.card-desafio,
+.box-ia,
+.item-diario,
+.stat,
+.painel-generos,
+.modal,
+.cadastro,
+.login,
+.diario,
+.estatisticas,
+.curadoria,
+.lancamentos,
+.desafios {
+  border-color: #d9d9d9;
+}
+
+.barra-filtros {
+  background: rgba(255, 255, 255, .86);
+  border-color: #d0d0d0;
+}
+
+.footerCinefilo {
+  background: #ffffff;
+  border-top-color: #111111;
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, .10);
+}
+
+.footerBase {
+  border-top-color: #d9d9d9;
+}
+
+
+/* ==========================================================
+   PALETA INVERTIDA — FUNDO ESCURO COM TEXTOS CLAROS
+   ========================================================== */
+:root {
+  --destaque: #ffffff;
+  --destaque-hover: #d9d9d9;
+  --superficie: #1a1a1a;
+  --superficie-2: #3a3a3a;
+  --texto: #f5f5f5;
+  --texto-suave: #bdbdbd;
+  --estrela: #d0d0d0;
+  --sombra: 0 4px 16px rgba(0, 0, 0, .35);
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 255, 255, .06), transparent 32rem),
+    #0f0f0f;
+  color: var(--texto);
+}
+
+.topoMenu {
+  background: rgba(18, 18, 18, .96);
+  border-bottom-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
+}
+
+.topoMenu h1,
+.topoMenu nav a,
+.titulo-secao,
+.card-desafio h3,
+.stat strong,
+.footerLogo,
+.footerColuna h3,
+.footerColuna a,
+.footerTopo {
+  color: var(--texto);
+}
+
+.topoMenu nav a:hover,
+.footerColuna a:hover,
+.footerTopo:hover {
+  background: #ffffff;
+  color: #111111;
+}
+
+.bannerIndex { background: #050505; }
+
+.button,
+.seta {
+  background: rgba(255, 255, 255, .12);
+  border-color: rgba(255, 255, 255, .5);
+}
+
+.button:hover,
+.btn-destaque:hover {
+  background: #d9d9d9;
+  color: #111111;
+}
+
+.btn-destaque,
+.btn-submit,
+.btn-avaliar-obra,
+.cadastro button,
+.login button,
+.combinar-gostos button,
+.lancamento button {
+  background: #ffffff;
+  color: #111111;
+}
+
+.btn-destaque:hover,
+.btn-submit:hover,
+.btn-avaliar-obra:hover,
+.cadastro button:hover,
+.login button:hover,
+.combinar-gostos button:hover,
+.lancamento button:hover {
+  background: #d9d9d9;
+  color: #111111;
+}
+
+.card,
+.card-desafio,
+.box-ia,
+.item-diario,
+.stat,
+.painel-generos,
+.modal,
+.cadastro,
+.login,
+.diario,
+.estatisticas,
+.curadoria,
+.lancamentos,
+.desafios,
+.resultado-ia {
+  background: var(--superficie);
+  color: var(--texto);
+  border-color: #444444;
+}
+
+.barra-filtros,
+.barra-filtros input,
+.barra-filtros select,
+#input-ia,
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea,
+.campo-cadastro input,
+.campo-login input,
+.combinar-gostos select,
+.chatbot input {
+  background: #242424;
+  color: var(--texto);
+  border-color: #555555;
+}
+
+.barra-filtros input::placeholder,
+.campo-cadastro input::placeholder,
+.campo-login input::placeholder,
+.chatbot input::placeholder {
+  color: #999999;
+}
+
+.tag,
+.progresso-bar,
+.trilho,
+.mensagem.usuario {
+  background: var(--superficie-2);
+  color: var(--texto);
+}
+
+.progresso-fill,
+.preenchimento {
+  background: #ffffff;
+}
+
+.meta,
+.stat span,
+.item-diario .data,
+.footerCinefilo,
+.footerBase,
+.footerMarca p {
+  color: var(--texto-suave);
+}
+
+.footerCinefilo {
+  background: #151515;
+  border-top-color: #ffffff;
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, .4);
+}
+
+.footerBase { border-top-color: #444444; }
+
+/* Proporção original das imagens dos cards */
+.card .poster,
+.poster {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  background-size: cover;
+  background-position: center;
+}
+
+.card .poster img,
+.poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+@media (max-width: 700px) {
+  .card .poster,
+  .poster {
+    aspect-ratio: 2 / 3;
+  }
+}
+
+
+/* ==========================================================
+   AJUSTE DO MENU E DA CURADORIA NO TEMA ESCURO
+   ========================================================== */
+
+.topoMenu {
+  min-height: 78px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Curadoria: contraste correto para textos e componentes escuros */
+body.pagina-curadoria-ia .curadoria,
+body.pagina-curadoria-ia .chatbot,
+body.pagina-curadoria-ia .combinar-gostos {
+  color: var(--texto);
+}
+
+body.pagina-curadoria-ia .curadoria > h1,
+body.pagina-curadoria-ia .combinar-gostos h2 {
+  color: #ffffff;
+}
+
+body.pagina-curadoria-ia .curadoria > p,
+body.pagina-curadoria-ia .combinar-gostos p,
+body.pagina-curadoria-ia .combinar-gostos label {
+  color: var(--texto-suave);
+}
+
+body.pagina-curadoria-ia .chatbot {
+  background: #1a1a1a;
+  border-color: #444444;
+}
+
+body.pagina-curadoria-ia .chatbot-mensagens {
+  background: transparent;
+  scrollbar-color: #666666 #242424;
+}
+
+body.pagina-curadoria-ia .mensagem {
+  color: #f5f5f5;
+  background: #242424;
+  border-color: #555555;
+}
+
+body.pagina-curadoria-ia .mensagem.usuario {
+  color: #ffffff;
+  background: #3a3a3a;
+}
+
+body.pagina-curadoria-ia .opcoes-humor button,
+body.pagina-curadoria-ia .humor,
+body.pagina-curadoria-ia #btn-combinar {
+  color: #111111;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+body.pagina-curadoria-ia .opcoes-humor button:hover,
+body.pagina-curadoria-ia .humor:hover,
+body.pagina-curadoria-ia #btn-combinar:hover {
+  color: #ffffff;
+  background: #555555;
+  border-color: #777777;
+}
+
+body.pagina-curadoria-ia .combinar-gostos select {
+  color: #f5f5f5;
+  background: #242424;
+  border-color: #555555;
+}
+
+body.pagina-curadoria-ia .combinar-gostos select option {
+  color: #111111;
+  background: #ffffff;
+}
+
+/* ======================================================
+   LOGIN E CADASTRO — CINÉFILO
+   Paleta: preto, branco e cinza
+   ====================================================== */
+
+/* Cartões principais */
+.cadastro,
+.login {
+    --erro: #b3261e;
+    --sucesso: #4caf50;
+
+    width: min(100%, 520px);
+    margin: 32px auto;
+    padding: clamp(24px, 4vw, 40px);
+
+    background: #ffffff;
+    color: #1a1a1a;
+
+    border: 1px solid #d0d0d0;
+    border-top: 4px solid #111111;
+    border-radius: 14px;
+
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+/* Títulos */
+.cadastro > h1,
+.login > h1 {
+    margin-bottom: 12px;
+    color: #111111;
+
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+
+/* Texto introdutório */
+.cadastro > p,
+.login > p {
+    margin-bottom: 26px;
+    color: #666666;
+    font-size: 0.95rem;
+}
+
+/* Campos dos formulários */
+.campo-cadastro,
+.campo-login {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 16px 0;
+    text-align: left;
+}
+
+.campo-cadastro label,
+.campo-login label {
+    color: #333333;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Campos de entrada */
+.campo-cadastro input,
+.campo-login input {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 14px;
+
+    background: #f7f7f7;
+    color: #1a1a1a;
+
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+
+    font: inherit;
+    outline: none;
+
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+}
+
+.campo-cadastro input::placeholder,
+.campo-login input::placeholder {
+    color: #888888;
+}
+
+.campo-cadastro input:hover,
+.campo-login input:hover {
+    border-color: #777777;
+}
+
+.campo-cadastro input:focus,
+.campo-login input:focus {
+    background: #ffffff;
+    border-color: #111111;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Indicação de campo inválido */
+.campo-cadastro input:not(:placeholder-shown):invalid,
+.campo-login input:not(:placeholder-shown):invalid {
+    border-color: var(--erro);
+}
+
+/* Botões dos formulários */
+.cadastro button,
+.login button {
+    padding: 12px 18px;
+    border: 1px solid #111111;
+    border-radius: 8px;
+
+    background: #111111;
+    color: #ffffff;
+
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background 0.25s ease,
+                color 0.25s ease,
+                transform 0.2s ease;
+}
+
+.cadastro button:hover,
+.login button:hover {
+    background: #3a3a3a;
+    border-color: #3a3a3a;
+    transform: translateY(-2px);
+}
+
+.cadastro button:active,
+.login button:active {
+    transform: translateY(0);
+}
+
+.cadastro button:disabled,
+.login button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Botão principal ocupa toda a largura */
+.cadastro form button[type="submit"],
+.login form button[type="submit"] {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 6px;
+    padding: 13px;
+    font-size: 1rem;
+}
+
+/* Mensagens de erro e sucesso */
+#mensagem-cadastro,
+#mensagem-login {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#mensagem-cadastro:empty,
+#mensagem-login:empty {
+    display: none;
+}
+
+#mensagem-cadastro.erro,
+#mensagem-login.erro {
+    color: #b3261e;
+    background: #fbe9e7;
+}
+
+#mensagem-cadastro.sucesso,
+#mensagem-login.sucesso {
+    color: #27632a;
+    background: #e8f5e9;
+}
+
+/* Links */
+.cadastro a,
+.login a {
+    color: #222222;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.cadastro a:hover,
+.login a:hover {
+    color: #666666;
+    text-decoration: underline;
+}
+
+/* Texto para alternar entre login e cadastro */
+.cadastro > p:has(> a),
+.login > p:has(> a) {
+    margin: 22px 0 0;
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+/* Bloco de alternância, caso esteja dentro do outro cartão */
+.cadastro .login,
+.login .cadastro,
+.login.cadastro,
+.cadastro.login {
+    width: auto;
+    margin: 22px 0 0;
+    padding: 20px 0 0;
+
+    background: transparent;
+    border: 0;
+    border-top: 1px solid #dddddd;
+    border-radius: 0;
+    box-shadow: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cadastro .login p,
+.login .cadastro p {
+    margin: 0;
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.cadastro .login a,
+.login .cadastro a {
+    padding: 6px 14px;
+    border: 1px solid #222222;
+    border-radius: 6px;
+    color: #222222;
+    font-size: 0.9rem;
+}
+
+.cadastro .login a:hover,
+.login .cadastro a:hover {
+    background: #222222;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Responsividade exclusiva do login e cadastro */
+@media (max-width: 480px) {
+    .cadastro,
+    .login {
+        width: 100%;
+        margin: 20px auto;
+        padding: 22px 18px;
+        border-radius: 12px;
+    }
+
+    .cadastro > h1,
+    .login > h1 {
+        font-size: 2rem;
+    }
+
+    .campo-cadastro input,
+    .campo-login input {
+        font-size: 16px;
+    }
+}
+
+/* Fundo totalmente preto apenas nas páginas de login e cadastro */
+body:has(.login),
+body:has(.cadastro) {
+    background: #000000 !important;
+    background-image: none !important;
+}
+
+body:has(.login) main,
+body:has(.cadastro) main,
+body:has(.login) .container,
+body:has(.cadastro) .container {
+    background: #000000 !important;
+    background-image: none !important;
+}
+
+/* Ajuste pontual: mantém o fundo transparente e reduz o espaço da barra. */
+.barra-filtros {
+    background: transparent !important;
+    padding: 8px !important;
+    gap: 8px !important;
+}
+
+
+/* Ajuste pontual: remove a borda externa da barra de filtros/busca. */
+.barra-filtros {
+    border: none !important;
+    box-shadow: none !important;
+}
