@@ -7,21 +7,41 @@
     <link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="footer.css">
 </head>
 <body class="pagina-extra pagina-desafios">
-    <header class="topoMenu">
-        <h1><a href="index.html">Cinéfilo</a></h1>
-        <nav>
-            <ul>
-                <li><a href="index.html#catalogo">Filmes</a></li>
-                <li><a href="index.html#animes">Animes</a></li>
-                <li><a href="index.html#series">Séries</a></li>
-                <li><a href="lancamentos.html">Lançamentos</a></li>
-                <li><a href="desafios.html">Desafios</a></li>
-                <li><a href="curadoria-ia.html">Curadoria IA</a></li>
-                <li><a href="diario.html">Diário</a></li>
-                <li><a href="estatisticas.html">Estatísticas</a></li>
-            </ul>
-        </nav>
-    </header>
+
+<header class="topoMenu">
+
+    <h1>
+        <a href="index.html">Cinéfilo</a>
+    </h1>
+
+    <button
+        class="btn-menu"
+        id="btn-menu"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="menu-navegacao"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav id="menu-navegacao" hidden>
+        <ul>
+            <li><a href="index.html#catalogo">Filmes</a></li>
+            <li><a href="index.html#animes">Animes</a></li>
+            <li><a href="index.html#series">Séries</a></li>
+            <li><a href="lancamentos.html">Lançamentos</a></li>
+            <li><a href="desafios.html">Desafios</a></li>
+            <li><a href="curadoria-ia.html">Curadoria IA</a></li>
+            <li><a href="diario.html">Diário</a></li>
+            <li><a href="estatisticas.html">Estatísticas</a></li>
+            <li><a href="login.html">Entrar</a></li>
+            <li><a href="cadastro.html">Criar conta</a></li>
+        </ul>
+    </nav>
+
+</header>
 
     <main class="container">
         <section class="desafios secao-visivel" id="desafios">
@@ -39,7 +59,7 @@
         </section>
     </main>
 
-
+    <script src="js/menu.js" defer></script>
     <script src="js/desafio.js"></script>
     <script src="js/footer.js" defer></script></script><script src="/js/tema.js"></script>
 </body>

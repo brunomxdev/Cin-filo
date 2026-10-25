@@ -3440,3 +3440,101 @@ body:has(.cadastro) .container {
     border: none !important;
     box-shadow: none !important;
 }
+
+
+
+/* ==========================================================
+   MENU HAMBÚRGUER — NAVEGAÇÃO PRINCIPAL
+   ========================================================== */
+
+/* Cabeçalho da página inicial */
+.topoMenu:has(#btn-menu) {
+    position: sticky;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+/* Botão do menu */
+.btn-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 46px;
+    height: 42px;
+    background: transparent;
+    border: 1px solid #555;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-menu:hover {
+    background: #333;
+}
+
+.btn-menu span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* Menu suspenso */
+#menu-navegacao {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: clamp(16px, 3vw, 40px);
+    width: min(320px, calc(100vw - 32px));
+    background: #171717;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 200;
+}
+
+#menu-navegacao[hidden] {
+    display: none !important;
+}
+
+#menu-navegacao ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 4px;
+    width: 100%;
+    list-style: none;
+}
+
+#menu-navegacao li {
+    width: 100%;
+}
+
+#menu-navegacao a {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+#menu-navegacao a:hover {
+    background: #fff;
+    color: #111;
+}
+
+.btn-menu[aria-expanded="true"] {
+    background: #333;
+}
+
+.btn-menu:focus-visible,
+#menu-navegacao a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
