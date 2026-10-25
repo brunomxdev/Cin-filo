@@ -33,6 +33,7 @@
             '<li><a href="estatisticas.html">Estatísticas</a></li>' +
             '<li><a href="login.html">Entrar</a></li>' +
             '<li><a href="cadastro.html">Criar conta</a></li>' +
+            '<li><a href="acesso.html">Área administrativa</a></li>' +
           '</ul>' +
         '</nav>' +
       '</div>' +

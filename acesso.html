@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acesso Administrativo | Cinéfilo</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/acesso.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <script src="js/footer.js" defer></script>
+    <script src="js/acesso.js" defer></script>
+</head>
+
+<body>
+
+    <header class="topoMenu">
+        <h1>
+            <a href="index.html">Cinéfilo</a>
+        </h1>
+    </header>
+
+    <main class="container">
+
+        <section class="secao-acesso secao-visivel">
+
+            <div class="card-acesso">
+
+                <h1>Área Administrativa</h1>
+
+                <p>
+                    Entre com suas credenciais para acessar
+                    as funcionalidades administrativas do Cinéfilo.
+                </p>
+
+                <form id="form-acesso">
+
+                    <div class="campo-acesso">
+                        <label for="usuario">Usuário</label>
+                        <input
+                            type="text"
+                            id="usuario"
+                            placeholder="Digite seu usuário"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo-acesso">
+                        <label for="senha">Senha</label>
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="Digite sua senha"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn-acessar">
+                        Entrar
+                    </button>
+
+                    <p id="mensagem-acesso"></p>
+
+                </form>
+
+                <a href="index.html" class="voltar-inicio">
+                    Voltar ao início
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

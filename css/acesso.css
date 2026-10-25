@@ -1,0 +1,96 @@
+
+.secao-acesso {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 40px 20px;
+}
+
+.card-acesso {
+    width: 100%;
+    max-width: 430px;
+    padding: 35px;
+    background-color: #171717;
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.card-acesso h1 {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.card-acesso > p {
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.campo-acesso {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.campo-acesso label {
+    color: #fff;
+    font-size: 14px;
+}
+
+.campo-acesso input {
+    padding: 13px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #222;
+    font-size: 14px;
+}
+
+.btn-acessar {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-acessar:hover {
+    background-color: #ccc;
+}
+
+#mensagem-acesso {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ff7777;
+}
+
+.voltar-inicio {
+    display: block;
+    margin-top: 25px;
+    color: #aaa;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.voltar-inicio:hover {
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .card-acesso {
+        padding: 25px 20px;
+    }
+
+    .card-acesso h1 {
+        font-size: 24px;
+    }
+}

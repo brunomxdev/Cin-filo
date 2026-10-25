@@ -1,0 +1,148 @@
+/* =========================================
+   PÁGINA DE SOLICITAÇÕES — CINÉFILO
+   ========================================= */
+
+.secao-solicitacoes {
+    width: min(100%, 850px);
+    margin: 0 auto 50px;
+}
+
+/* Introdução */
+
+.introducao-solicitacoes {
+    margin-bottom: 28px;
+}
+
+.introducao-solicitacoes p {
+    color: var(--texto-suave);
+    line-height: 1.7;
+    margin-top: 12px;
+}
+
+/* Cartão do formulário */
+
+.cartao-solicitacao {
+    background: var(--superficie);
+    padding: clamp(22px, 4vw, 36px);
+    border: 1px solid var(--superficie-2);
+    border-top: 4px solid var(--destaque);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+}
+
+/* Campos */
+
+.cartao-solicitacao .form-grupo {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cartao-solicitacao label {
+    color: var(--texto);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.cartao-solicitacao input,
+.cartao-solicitacao select,
+.cartao-solicitacao textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #222222;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.cartao-solicitacao select option {
+    background: #ffffff;
+    color: #222222;
+}
+
+.cartao-solicitacao input:focus,
+.cartao-solicitacao select:focus,
+.cartao-solicitacao textarea:focus {
+    border-color: var(--destaque);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+/* Botão */
+
+.btn-enviar-solicitacao {
+    width: 100%;
+    padding: 14px;
+    background: #ffffff;
+    color: #111111;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease,
+                transform 0.2s ease;
+}
+
+.btn-enviar-solicitacao:hover {
+    background: #dddddd;
+    transform: translateY(-2px);
+}
+
+/* Mensagem de retorno */
+
+.mensagem-solicitacao {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.mensagem-solicitacao:empty {
+    display: none;
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+
+    .secao-solicitacoes {
+        margin-bottom: 30px;
+    }
+
+    .cartao-solicitacao {
+        padding: 20px;
+    }
+
+    .introducao-solicitacoes .titulo-secao {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Permite a exibição do conteúdo da página de solicitações */
+
+body.pagina-extra .container > .secao-solicitacoes {
+    display: block !important;
+}
+
+.btn-sair {
+    padding: 9px 18px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-sair:hover {
+    background-color: #fff;
+    color: #111;
+}

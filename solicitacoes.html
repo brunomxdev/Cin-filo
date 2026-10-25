@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solicitações | Cinéfilo</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/solicitacoes.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body class="pagina-extra" data-perfil="proprietario">
+
+    <!-- Cabeçalho -->
+    <header class="topoMenu">
+        <h1>
+            <a href="index.html">Cinéfilo</a>
+        </h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html#catalogo">Filmes</a></li>
+                <li><a href="index.html#animes">Animes</a></li>
+                <li><a href="index.html#series">Séries</a></li>
+                <li><a href="lancamentos.html">Lançamentos</a></li>
+                <li><a href="desafios.html">Desafios</a></li>
+                <li><a href="curadoria-ia.html">Curadoria IA</a></li>
+                <li><a href="diario.html">Diário</a></li>
+                <li><a href="estatisticas.html">Estatísticas</a></li>
+                <li><a href="solicitacoes.html">Solicitações</a></li>
+            </ul>
+        </nav>
+
+        <button onclick="encerrarSessao()" class="btn-sair">
+            Sair
+        </button>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+
+        <section class="secao-solicitacoes">
+
+            <div class="introducao-solicitacoes">
+                <h2 class="titulo-secao">
+                    Solicitações de implementação
+                </h2>
+
+                <p>
+                    Encontrou algo que gostaria de adicionar ao Cinéfilo?
+                    Envie sua solicitação para nossa equipe de desenvolvimento.
+                </p>
+            </div>
+
+            <!-- Formulário -->
+            <div class="cartao-solicitacao">
+
+                <form id="form-solicitacao">
+
+                    <div class="form-grupo">
+                        <label for="tipo">
+                            Tipo de solicitação
+                        </label>
+
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="Filme">Filme</option>
+                            <option value="Série">Série</option>
+                            <option value="Anime">Anime</option>
+                            <option value="Melhoria">Melhoria no site</option>
+                        </select>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="titulo">
+                            Título da solicitação
+                        </label>
+
+                        <input
+                            type="text"
+                            id="titulo"
+                            name="titulo"
+                            placeholder="Ex.: Interestelar"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="descricao">
+                            Descrição
+                        </label>
+
+                        <textarea
+                            id="descricao"
+                            name="descricao"
+                            rows="5"
+                            maxlength="500"
+                            placeholder="Descreva o que você gostaria de implementar..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="prioridade">
+                            Prioridade
+                        </label>
+
+                        <select id="prioridade" name="prioridade" required>
+                            <option value="">Selecione a prioridade</option>
+                            <option value="Baixa">Baixa</option>
+                            <option value="Média">Média</option>
+                            <option value="Alta">Alta</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-enviar-solicitacao">
+                        Enviar solicitação
+                    </button>
+
+                    <p
+                        id="mensagem-solicitacao"
+                        class="mensagem-solicitacao"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Rodapé automático -->
+    <script src="js/footer.js" defer></script>
+
+    <script src="/js/controle-acesso.js" defer></script>
+
+    <!-- Lógica do formulário -->
+    <script src="js/solicitacoes.js" defer></script>
+
+    <script src="js/sair.js" defer></script>
+
+</body>
+</html>

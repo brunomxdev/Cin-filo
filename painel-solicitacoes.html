@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel de solicitações | Cinéfilo</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/painel-solicitacoes.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body class="pagina-extra" data-perfil="desenvolvedor">
+
+    <!-- Cabeçalho -->
+    <header class="topoMenu">
+        <h1>
+            <a href="index.html">Cinéfilo</a>
+        </h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html#catalogo">Filmes</a></li>
+                <li><a href="index.html#animes">Animes</a></li>
+                <li><a href="index.html#series">Séries</a></li>
+                <li><a href="lancamentos.html">Lançamentos</a></li>
+                <li><a href="desafios.html">Desafios</a></li>
+                <li><a href="curadoria-ia.html">Curadoria IA</a></li>
+                <li><a href="diario.html">Diário</a></li>
+                <li><a href="estatisticas.html">Estatísticas</a></li>
+                <li><a href="solicitacoes.html">Solicitações</a></li>
+            </ul>
+        </nav>
+
+        <button onclick="encerrarSessao()" class="btn-sair">
+            Sair
+        </button>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+
+        <section class="secao-painel secao-visivel">
+
+            <!-- Introdução -->
+            <div class="introducao-painel">
+
+                <h2 class="titulo-secao">
+                    Painel de solicitações
+                </h2>
+
+                <p>
+                    Acompanhe e gerencie as solicitações enviadas para
+                    a equipe de desenvolvimento do Cinéfilo.
+                </p>
+
+            </div>
+
+            <!-- Indicadores -->
+            <div class="resumo-solicitacoes">
+
+                <article class="card-resumo">
+                    <span>Total de solicitações</span>
+                    <strong id="total-solicitacoes">0</strong>
+                </article>
+
+                <article class="card-resumo">
+                    <span>Pendentes</span>
+                    <strong id="total-pendentes">0</strong>
+                </article>
+
+                <article class="card-resumo">
+                    <span>Em andamento</span>
+                    <strong id="total-andamento">0</strong>
+                </article>
+
+                <article class="card-resumo">
+                    <span>Concluídas</span>
+                    <strong id="total-concluidas">0</strong>
+                </article>
+
+            </div>
+
+            <!-- Lista de solicitações -->
+            <div class="lista-solicitacoes-container">
+
+                <div class="cabecalho-lista">
+
+                    <h3>Solicitações recebidas</h3>
+
+                    <a href="solicitacoes.html" class="link-nova-solicitacao">
+                        Nova solicitação
+                    </a>
+
+                </div>
+
+                <div class="filtro-solicitacoes">
+                    <label for="filtro-status">Filtrar por status:</label>
+
+                    <select id="filtro-status">
+                        <option value="Todas">Todas</option>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Em andamento">Em andamento</option>
+                        <option value="Concluída">Concluída</option>
+                    </select>
+                </div>
+
+                <div id="lista-solicitacoes">
+
+                    <!-- As solicitações serão inseridas pelo JavaScript -->
+
+                </div>
+
+                <!-- Mensagem para lista vazia -->
+                <p id="mensagem-vazia" class="mensagem-vazia">
+                    Nenhuma solicitação foi recebida até o momento.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Rodapé automático -->
+    <script src="js/footer.js" defer></script>
+
+    <script src="js/controle-acesso.js" defer></script>
+
+    <!-- Lógica do painel -->
+    <script src="js/painel-solicitacoes.js" defer></script>
+
+    <script src="js/sair.js" defer></script>
+
+</body>
+</html>
