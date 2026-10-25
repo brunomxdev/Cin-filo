@@ -76,24 +76,6 @@
     font-family: inherit;
 }
 
-.link-nova-solicitacao {
-    display: inline-block;
-    padding: 11px 18px;
-    background: #ffffff;
-    color: #111111;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.3s ease,
-                transform 0.2s ease;
-}
-
-.link-nova-solicitacao:hover {
-    background: #dddddd;
-    transform: translateY(-2px);
-}
-
 /* Mensagem de lista vazia */
 
 .mensagem-vazia {
