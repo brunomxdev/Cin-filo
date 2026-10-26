@@ -973,6 +973,17 @@ function obterTodasObras() {
   ];
 }
 
+window.cinefiloObras = obterTodasObras();
+
+try {
+    localStorage.setItem(
+        "cinefilo-obras",
+        JSON.stringify(window.cinefiloObras)
+    );
+} catch (erro) {
+    console.warn("Não foi possível compartilhar o catálogo.", erro);
+}
+
 
 // ======================================================
 // 11. CARROSSEL
